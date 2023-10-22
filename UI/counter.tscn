@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6b01whsob7nv"]
+
+[ext_resource type="Texture2D" uid="uid://0uvwcgprjgli" path="res://Sprites/pile_of_junk_large.d0437ef0f573c0122a0c81cdca93d094ab024015.png" id="1_ak53h"]
+
+[node name="scrap counter" type="NinePatchRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -29.0
+offset_right = 47.0
+offset_bottom = 18.0
+grow_vertical = 2
+texture = ExtResource("1_ak53h")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -17.0
+offset_right = 74.0
+offset_bottom = 9.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Counter:"

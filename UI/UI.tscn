@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt3adx353558c"]
+
+[ext_resource type="Script" path="res://UI/UI.gd" id="1_desr7"]
+[ext_resource type="PackedScene" uid="uid://b2pv7n1kcbxfq" path="res://UI/scrap counter/counter.tscn" id="1_k1dr8"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_desr7")
+
+[node name="Counters" type="VBoxContainer" parent="."]
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 48.0
+offset_bottom = 49.0
+
+[node name="scrap counter" parent="Counters" groups=["scrap counter"] instance=ExtResource("1_k1dr8")]
+layout_mode = 2

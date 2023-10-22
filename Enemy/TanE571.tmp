@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://vyhitcnh6vdp"]
+
+[ext_resource type="Script" path="res://Enemy/TankEnemy.gd" id="1_r8r5m"]
+[ext_resource type="Texture2D" uid="uid://c7mbsntbh0r0c" path="res://Sprites/Enemies/latest-467068657.png" id="2_jnv83"]
+[ext_resource type="Script" path="res://State Machine.gd" id="3_oepcq"]
+[ext_resource type="Script" path="res://enemyIdle.gd" id="4_lyowl"]
+[ext_resource type="Script" path="res://EnemyFollow.gd" id="5_8shlc"]
+[ext_resource type="Script" path="res://TankEnemyFollow.gd" id="6_kv38s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8s6q8"]
+
+[node name="Tank Enemy Body" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 13
+script = ExtResource("1_r8r5m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+shape = SubResource("CircleShape2D_8s6q8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-1, -2)
+scale = Vector2(0.038, 0.025)
+texture = ExtResource("2_jnv83")
+
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state") groups=["Enemy", "enemy"]]
+script = ExtResource("3_oepcq")
+initial_state = NodePath("TankEnemyFollow")
+
+[node name="EnemyIdle" type="Node" parent="State Machine"]
+script = ExtResource("4_lyowl")
+
+[node name="BasicEnemyFollow" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_8shlc")
+enemy = NodePath("../..")
+
+[node name="TankEnemyFollow" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_kv38s")
+enemy = NodePath("../..")
