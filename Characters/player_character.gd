@@ -114,8 +114,5 @@ func add_scrap():
 	return scrap_count
 
 
-
-#func _on_scrap_body_entered(_body):
-#	print("bong")
-#	$"../UI/Scrap Counter/Label".scrap_count += 1
-	
+func _on_scrap_body_entered(_a):
+	pass
