@@ -13,6 +13,7 @@ extends CharacterBody2D
 @onready var dash_timer = $DashTimer
 @onready var dash_cd_timer = $DashCDTimer
 @onready var ghost_timer = $GhostTimer
+@export var health : int = 6
 
 var scrap_count : float = 0
 var speed : float = 64

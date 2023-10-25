@@ -1,8 +1,10 @@
 VBoxContainer
-CanvasLayer
 Label
-TextureRect
+TextureProgressBar
+HBoxContainer
 NinePatchRect
+CanvasLayer
+TextureRect
 TextEdit
 Node
 Node2D

@@ -2,7 +2,7 @@ extends Camera2D
 
 @onready var player = $".."
 var dash_lag : float = 2
-var walk_lag : float = 6
+var walk_lag : float = 7
 
 func _physics_process(_delta):
 	if player.isDashing:

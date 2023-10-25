@@ -4,8 +4,10 @@
 [ext_resource type="Script" path="res://UI/scrap counter/Label.gd" id="2_1346t"]
 
 [node name="scrap counter" type="NinePatchRect"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 47.0
+offset_bottom = 44.0
 patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
