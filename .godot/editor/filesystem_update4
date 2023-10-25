@@ -6,7 +6,3 @@ res://Scrap Counter/scrap.tscn
 res://Scrap Counter/scrap_counter.tscn
 res://Enemy/TankEnemy.tscn
 res://Enemy/enemy.tscn
-res://UI/UI.tscn
-res://UI/scrap counter/counter.tscn
-res://Characters/player_character.gd
-res://Enemy/enemycollision.gd
