@@ -21,6 +21,8 @@ var isDashing = false
 var ghost_scene = preload("res://Dash Stuff/DashGhost.tscn")
 @onready var sprite = $"Character Sprite"
 
+@export var health : int = 6
+
 #var scrap_counter = get_tree().get_first_node_in_group("scrap counter")
 
 func _ready():
@@ -115,4 +117,13 @@ func add_scrap():
 
 
 func _on_scrap_body_entered(_a):
+	pass
+	
+func take_damage(amount):
+	health = health - amount
+	if health <= 0:
+		player_dies()
+		print("pass")
+
+func player_dies():
 	pass

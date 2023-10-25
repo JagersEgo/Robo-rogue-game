@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1vk2re43vyra"]
+[gd_scene load_steps=8 format=3 uid="uid://d1vk2re43vyra"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_014sn"]
 [ext_resource type="Texture2D" uid="uid://dbb0j3l1kbc3a" path="res://Sprites/Enemies/290-1425191543.png" id="2_bkjsa"]
+[ext_resource type="Script" path="res://Enemy/enemycollision.gd" id="2_vtmr6"]
 [ext_resource type="Script" path="res://State Machine.gd" id="2_vv6yc"]
 [ext_resource type="Script" path="res://enemyIdle.gd" id="3_dtk8a"]
 [ext_resource type="Script" path="res://EnemyFollow.gd" id="5_j4vq3"]
@@ -13,8 +14,13 @@ collision_layer = 8
 collision_mask = 13
 script = ExtResource("1_014sn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(7.10543e-15, 0)
+script = ExtResource("2_vtmr6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 0
+position = Vector2(-7.10543e-15, 0)
 shape = SubResource("CircleShape2D_8s6q8")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." groups=["Enemy"]]
@@ -39,3 +45,9 @@ script = ExtResource("5_j4vq3")
 enemy = NodePath("../..")
 
 [node name="Node" type="Node" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+light_mask = 0
+shape = SubResource("CircleShape2D_8s6q8")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
