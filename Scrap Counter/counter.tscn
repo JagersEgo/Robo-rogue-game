@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxqwoft6417x4"]
+
+[ext_resource type="Script" path="res://Label.gd" id="1_bg52a"]
+[ext_resource type="Texture2D" uid="uid://0uvwcgprjgli" path="res://Sprites/pile_of_junk_large.d0437ef0f573c0122a0c81cdca93d094ab024015.png" id="2_gwe81"]
+
+[node name="counter" type="HBoxContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_bottom = 51.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Scrap Count:    "
+script = ExtResource("1_bg52a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_gwe81")
+expand_mode = 2

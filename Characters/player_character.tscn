@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cl1ii3qf1nkw5"]
+[gd_scene load_steps=32 format=3 uid="uid://cl1ii3qf1nkw5"]
 
 [ext_resource type="Texture2D" uid="uid://dd1ax72jm8kp1" path="res://Sprites/Prototype/Prototype_Worksheet.png" id="1_gmdau"]
 [ext_resource type="Script" path="res://Characters/player_character.gd" id="1_rqwg0"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://Characters/gun.gd" id="4_gl17r"]
 [ext_resource type="Script" path="res://Characters/gun2.gd" id="5_25oi4"]
 [ext_resource type="Script" path="res://Characters/Camera2D.gd" id="5_doscu"]
-[ext_resource type="Script" path="res://Game Level/Label.gd" id="7_pmimr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oh67i"]
 size = Vector2(12, 14)
@@ -298,18 +297,9 @@ one_shot = true
 wait_time = 0.03
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 script = ExtResource("5_doscu")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 44.0
-offset_top = 6.0
-offset_right = 84.0
-offset_bottom = 32.0
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("7_pmimr")
 
 [connection signal="timeout" from="GhostTimer" to="." method="_on_ghost_timer_timeout"]

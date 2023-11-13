@@ -8,4 +8,4 @@ func _physics_process(_delta):
 	if player.isDashing:
 		position_smoothing_speed = dash_lag
 	if !player.isDashing:
-		position_smoothing_speed = walk_lag
+		position_smoothing_speed = lerp(dash_lag, walk_lag, 0.5)
